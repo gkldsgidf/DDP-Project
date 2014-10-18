@@ -1,6 +1,7 @@
 library(shiny)
 
-shinyUI(pageWithSidebar(
+shinyUI( 
+  pageWithSidebar(
   headerPanel('Body Mass Index calculator'),
   sidebarPanel(
     sliderInput('height','Your height in cm:', min = 100, max = 220, value = 175),
@@ -38,7 +39,20 @@ shinyUI(pageWithSidebar(
         p("- Active: Typical daily living activities PLUS At least 60 minutes of daily moderate activity"),
         p("- Very active: Typical daily living activities PLUS At least 60 minutes of daily moderate activity PLUS An additional 60 minutes of vigorous activity or 120 minutes of moderate activity"),
         verbatimTextOutput("Exercise")
+      ),
+      tabPanel('Documentation',
+        p("Hi user."),
+        p("If you are using the Body Mass Index calculator you are concerned of your health, a course evaluator, or both. Whoever you are, I thank you for your time."),
+        p("Next, you will see two parts in the first screen. On the left, there are the slider and numeric inputs in which you will introduce your information so that the program 
+        can make measures. After you are done this, please click on the Go! button in order it offers conclusions. Bellow the data area, there is a picture with the classical 
+        Mediterranean diet as an example of one healthy and equilibrated diet. On the right part, you can see your body mass index (BMI) in a scale from underweight to obese. 
+        Colors are indicating whether you are in a risky group (underweight or obese), moderated risky group (overweight) or healthy weight. This is important because people 
+        in risky groups can develop illnesses such as cardiovascular disease. In addition, there is extra information on what the BMI is."), 
+        p("Finally in the second slide, there are two types of outputs: Basal metabolism and Total calories taking into account the activity level. The first one measures the 
+        energy requirements to carry out all the body activities while resting like breathing, food digesting, heart beating and so on. Harris and Benedict equations are used 
+        for this purpose. The second output consists in a measure of the calories required when the physical activity is taken into account. Moreover, a short explanation 
+        about the meaning of the activity levels is displayed.")
       )
     )
-  )
+    )
 ))
