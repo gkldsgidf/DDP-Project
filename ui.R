@@ -12,7 +12,7 @@ shinyUI(
     selectInput('activity', "Activity level", choices = c("Sedentary" = "1", "Low active" = "1.12", "Active" = "1.27", "Very active" = "1.45"), selected = 1),
     submitButton("Go!"),
     br(),
-    p("The mediterranean diet:"),
+    p("The Mediterranean diet:"),
     img (src="mediterranean.png")
   ),
   
@@ -40,6 +40,26 @@ shinyUI(
         p("- Very active: Typical daily living activities PLUS At least 60 minutes of daily moderate activity PLUS An additional 60 minutes of vigorous activity or 120 minutes of moderate activity"),
         verbatimTextOutput("Exercise")
       ),
+      tabPanel('Further step',
+               p("Up until now, you know your present BMI, and your caloric needs according 
+        to your gender, age and activity level. The next question is “am I gaining 
+        or losing weight with my current diet?” Generally speaking, there is one way to 
+        know it: Just compare your caloric needs to the calories you ingest in your diet. 
+        So simple and so complex. The problem here is that almost each and every person 
+        in the Earth have a different food intake. In other words, the caloric variability 
+        from food is extremely high. Think about how your diet differs from your neighbors' 
+        or your colleagues'."), 
+        p("Fortunately, it is easy to find information at least for 
+        many western dishes in webpages like ", a('this', href='http://www.nal.usda.gov/fnic/foodcomp/search/'), " or", a('this', href='http://www.bedca.net/bdpub/index.php')," (the last one in Spanish)."), 
+        h6("- Firstly, write down all the dishes you consume in a period of time (i.e. in a week)"),
+        h6("- Secondly, look for the dishes in the above or other pages. You only need the calories data"),
+        h6("- Then, sum them up and divide it by the number of days to obtain your real caloric intake per day"),
+        h6("- Finally, compare it with your caloric intake requirements"),
+
+        p("This way you will find if your are gaining or losing weight."), 
+        p("Please take into account that it does not matter if you eat extra food one day if you burn the extra calories the next days."),
+        plotOutput("Further step")
+      ),
       tabPanel('Documentation',
         p("Hi user."),
         p("If you are using the Body Mass Index calculator you are concerned of your health, a course evaluator, or both. Whoever you are, I thank you for your time."),
@@ -48,10 +68,11 @@ shinyUI(
         Mediterranean diet as an example of one healthy and equilibrated diet. On the right part, you can see your body mass index (BMI) in a scale from underweight to obese. 
         Colors are indicating whether you are in a risky group (underweight or obese), moderated risky group (overweight) or healthy weight. This is important because people 
         in risky groups can develop illnesses such as cardiovascular disease. In addition, there is extra information on what the BMI is."), 
-        p("Finally in the second slide, there are two types of outputs: Basal metabolism and Total calories taking into account the activity level. The first one measures the 
+        p("In the second slide, there are two types of outputs: Basal metabolism and Total calories taking into account the activity level. The first one measures the 
         energy requirements to carry out all the body activities while resting like breathing, food digesting, heart beating and so on. Harris and Benedict equations are used 
         for this purpose. The second output consists in a measure of the calories required when the physical activity is taken into account. Moreover, a short explanation 
-        about the meaning of the activity levels is displayed.")
+        about the meaning of the activity levels is displayed."),
+        p(" In the third slide, there are steps in case you want to know more about your diet adn your present health state.")
       )
     )
     )
