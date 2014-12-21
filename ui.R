@@ -72,7 +72,8 @@ shinyUI(
         energy requirements to carry out all the body activities while resting like breathing, food digesting, heart beating and so on. Harris and Benedict equations are used 
         for this purpose. The second output consists in a measure of the calories required when the physical activity is taken into account. Moreover, a short explanation 
         about the meaning of the activity levels is displayed."),
-        p(" In the third slide, there are steps in case you want to know more about your diet adn your present health state.")
+        p(" In the third slide, there are steps in case you want to know more about your diet adn your present health state."),
+        p("Contact: halcon5440@gmail.com")
       )
     )
     )
